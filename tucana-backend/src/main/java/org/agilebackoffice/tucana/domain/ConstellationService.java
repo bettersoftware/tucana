@@ -21,9 +21,6 @@ public class ConstellationService {
 	@Inject
 	private ConstellationRepository constellationRepository;
 
-	@Inject
-	private CommentRepository commentRepository;
-
 	public Constellation persistConstellation(
 			Constellation constellation2Persist) {
 		return constellationRepository
@@ -65,42 +62,4 @@ public class ConstellationService {
 		return constellationRepository
 				.findAllConstellationsByFullTextSearch(search);
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.agilebackoffice.wafe.domain.IConstellation#findAllCommentsByConstellation
-	 * (org.agilebackoffice.wafe.domain.Constellation)
-	 */
-	public List<Comment> findAllCommentsByConstellation(
-			Constellation constellation) {
-		return commentRepository.findAllCommentsByConstellation(constellation);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.agilebackoffice.wafe.domain.IConstellation#addCommentToConstellation
-	 * (org.agilebackoffice.wafe.domain.Constellation,
-	 * org.agilebackoffice.wafe.domain.Comment)
-	 */
-	public Comment addCommentToConstellation(Constellation constellation,
-			Comment comment) {
-		comment.setConstellation(constellation);
-		return commentRepository.persistComment(comment);
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.agilebackoffice.wafe.domain.IConstellation#removeCommentFromConstellation
-	 * (org.agilebackoffice.wafe.domain.Comment)
-	 */
-	public Comment removeCommentFromConstellation(Comment comment) {
-		return commentRepository.removeComment(comment);
-	}
-
 }
