@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+	
+	<body>
+		<wicket:extend>
+			<h1>Found <span wicket:id="c_count">xxx</span> Constellations</h1>
+			
+			<table cellspacing="0" class="dataview">
+			    <tr>
+			        <th>Name</th>
+			        <th>Genetive Name</th>
+			        <th>Code</th>
+			        <th>Actions</th>
+			    </tr>
+			    <tr wicket:id="datatable">
+			        <td><span wicket:id=c_name>[c_name]</span> </td>
+			        <td><span wicket:id="c_gen_name">[c_gen_name]</span></td>
+			        <td><span wicket:id="c_code">[c_code]</span></td>
+			    </tr>
+			</table>
+		</wicket:extend>
+	</body>
+	
+</html>
+
+
