@@ -10,5 +10,6 @@
   <modules>
   	<module>tucana-backend</module>
     <module>tucana-importer</module>
+    <module>tucana-ui-wicket</module>
   </modules>
 </project>
