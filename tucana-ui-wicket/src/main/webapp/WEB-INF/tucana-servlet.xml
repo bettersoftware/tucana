@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+            http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd">
+
+	<import resource="classpath:/META-INF/spring/*-context.xml" />
+
+
+
+	<context:component-scan base-package="org.agilebackoffice.tucana" />
+
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+	<bean id="xstreamMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller"
+		p:autodetectAnnotations="true" />
+	<bean id="xmlView"
+		class="org.springframework.web.servlet.view.xml.MarshallingView"
+		p:contentType="application/xml">
+		<constructor-arg ref="xstreamMarshaller" />
+	</bean>
+	<bean id="jsonView"
+		class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json" />
+				<entry key="xml" value="application/xml" />
+			</map>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<ref bean="jsonView" />
+				<ref bean="xmlView" />
+			</list>
+		</property>
+		<property name="ignoreAcceptHeader" value="true" />
+	</bean>
+</beans>

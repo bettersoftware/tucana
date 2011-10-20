@@ -1,0 +1,129 @@
+
+
+body{
+	background-color: #404040;
+	color: #eeeeee;
+	font-size: 1.0em;
+	font-family: Ubuntu, serif;
+}
+
+h1{
+	font-size: 1.4em;
+	text-align: left;
+	width: 95%;
+	margin: auto;
+	padding-top: 20px;
+}
+
+a{
+	color: #eeeeee;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+	text-shadow: lime;
+}
+
+#header{
+	background-image: url("images/header.png");
+	background-position: top  center;
+	background-repeat: no-repeat;
+	border: 2px solid white;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+    -webkit-border-radius: 15px; 
+	width: 90%;
+	height: 100px;
+	margin: auto;
+}
+
+#content{
+	margin: auto;
+	width: 90%;
+	text-align: center;
+}
+
+.dataview{
+	width: 95%;
+	border: 1px solid white;
+	border-spacing: 5px;
+	margin: auto;
+}
+
+.dataview_half{
+	width: 45%;
+	float: left;
+	margin: 0px;
+}
+
+.dataview th{
+	text-align: left;
+	padding: 5px;
+	background-color: #303030;
+	border-collapse: collapse;
+	white-space: nowrap;
+}
+
+.dataview tr.even{
+	background-color: #3a3a3a;
+}
+
+.dataview td{
+	padding: 3px;
+	text-align: left;
+	white-space: nowrap;
+}
+
+.sub_panel{
+	text-align: left;
+	width: 95%;
+	margin: auto;
+}
+
+.preview_panel{
+	width: 45%;
+	float: right;
+	text-align: center;
+}
+
+.preview_panel img{
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+    -webkit-border-radius: 15px; 
+    -moz-box-shadow: 10px 10px 10px #808080;
+	-webkit-box-shadow: 10px 10px 10px #808080;
+	box-shadow: 10px 10px 10px #808080;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#808080')";
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#808080');
+}
+
+.search input {
+    padding: 5px 70px 5px 22px;
+    border: 1px #acddff solid;
+    background-color: #ecf8f6;
+    background-image: url(images/magnifier.png); 
+    background-position: 5px center; 
+    background-repeat: no-repeat;
+    background-color: #ecf8f6;
+    outline: none;
+    width: 250px;
+    height: 25px;
+    font-size: 1.1em;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px; 
+}
+.search button {
+    padding: 1px;
+    border: 1px #acddff solid;
+    background-color: #fffdfa;
+    margin: 0 5px 0 -85px;
+    margin-top: 20px;
+    width: 75px;
+    height: 23px;
+    font-size: 1.1em;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
