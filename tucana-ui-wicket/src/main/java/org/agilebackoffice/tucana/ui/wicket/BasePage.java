@@ -31,7 +31,7 @@ public abstract class BasePage extends WebPage {
 	public BasePage(String search) {
 		super();
 		this.search = search;
-		add_tmp(getSearchForm());
+		add(getSearchForm());
 	}
 
 	/**
