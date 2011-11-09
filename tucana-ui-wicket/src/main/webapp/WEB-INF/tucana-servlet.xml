@@ -11,32 +11,5 @@
 
 
 
-	<context:component-scan base-package="org.agilebackoffice.tucana" />
-
-	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
-	<bean id="xstreamMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller"
-		p:autodetectAnnotations="true" />
-	<bean id="xmlView"
-		class="org.springframework.web.servlet.view.xml.MarshallingView"
-		p:contentType="application/xml">
-		<constructor-arg ref="xstreamMarshaller" />
-	</bean>
-	<bean id="jsonView"
-		class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
-	<bean
-		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-		<property name="mediaTypes">
-			<map>
-				<entry key="json" value="application/json" />
-				<entry key="xml" value="application/xml" />
-			</map>
-		</property>
-		<property name="defaultViews">
-			<list>
-				<ref bean="jsonView" />
-				<ref bean="xmlView" />
-			</list>
-		</property>
-		<property name="ignoreAcceptHeader" value="true" />
-	</bean>
+	<context:component-scan base-package="org.tucana.web" />
 </beans>

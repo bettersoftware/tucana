@@ -1,0 +1,8 @@
+#Sat Nov 05 23:56:21 CET 2011
+analyseLocally=false
+eclipse.preferences.version=1
+projectArtifactId=tucana-ui-wicket
+projectBranch=master
+projectGroupId=org.agilebackoffice.tucana.ui
+serverUrl=http\://server001.agilebackoffice.org/sonar
+version=1

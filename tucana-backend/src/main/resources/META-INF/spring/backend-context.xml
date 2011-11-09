@@ -8,7 +8,7 @@
 
 	<context:property-placeholder location="classpath:/db.properties" />
  
-	<context:component-scan base-package="org.agilebackoffice.tucana.domain" />
+	<context:component-scan base-package="org.tucana.domain, org.tucana.repository,org.tucana.service" />
 	<context:annotation-config />
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
@@ -29,7 +29,6 @@
 		<property name="jpaPropertyMap">
 			<map>
 				<entry key="hibernate.hbm2ddl.auto" value="${db.hbmddl_auto}" />
-<!-- 				<entry key="hibernate.search.default.indexBase" value="${tucana.lucene.index}"/> -->
 			</map>
 		</property>
 	</bean>

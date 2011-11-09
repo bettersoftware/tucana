@@ -21,12 +21,7 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/tucana-servlet.xml</param-value>
     </context-param>
-    <context-param>
-        <param-name>tucana_lucene_index</param-name>
-        <param-value>/tmp/lucene/index</param-value>
-    </context-param>
-    
-    
+  
     <listener>
         <listener-class>
             org.springframework.web.context.ContextLoaderListener
