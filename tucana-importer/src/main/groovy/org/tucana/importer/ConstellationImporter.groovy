@@ -57,9 +57,7 @@ class ConstellationImporter {
 				constellation.numberOfStarsGreater3M = cells[10].text() as int
 				constellation.numberOfStarsGreater4M = cells[11].text() as int
 				constellation.starCardData = new URL(retrieveStarCardRef(cells[12].a.@href.text())).bytes
-				
-				
-				
+
 				Map names = getAllNamesForConstellation (constellation.code)
 				List cn = []
 				names.each{String key, String value ->

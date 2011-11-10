@@ -54,7 +54,7 @@ public class Constellation implements Serializable{
 	@Lob
 	@XStreamOmitField
 	private byte[] starCardData;
-	
+
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	@XStreamImplicit(itemFieldName="names")
 	private List<ConstellationName> names = new ArrayList<ConstellationName>();
