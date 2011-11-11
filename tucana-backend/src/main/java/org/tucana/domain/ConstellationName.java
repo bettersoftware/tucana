@@ -14,8 +14,9 @@ import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.Store;
 
 /**
- * @author kamann
+ * Domain class holding the international names of a {@link Constellation}.
  * 
+ * @author Anne Miller
  */
 @Entity
 public class ConstellationName implements Serializable {

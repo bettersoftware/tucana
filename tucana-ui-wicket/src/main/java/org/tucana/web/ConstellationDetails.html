@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+	
+	<body>
+		<wicket:extend>
+			<h1>Details for <span wicket:id="c_details_for">Constellation</span></h1>
+			
+			<div class="sub_panel">
+				<table class="dataview dataview_half">
+					<tr>
+						<th wicket:id="c_details_name_label"/>
+						<td wicket:id="c_details_name_text"/>
+						<th wicket:id="c_details_gen_name_label"/>
+						<td wicket:id="c_details_gen_name_text"/>
+					</tr>
+					<tr>
+						<th wicket:id="c_details_code_label"/>
+						<td wicket:id="c_details_code_text"/>
+						<th wicket:id="c_details_hemisphere_label"/>
+						<td wicket:id="c_details_hemisphere_text"/>
+					</tr>
+					<tr>
+						<th wicket:id="c_details_author_label"/>
+						<td wicket:id="c_details_author_text"/>
+						<th wicket:id="c_details_area_label"/>
+						<td wicket:id="c_details_area_text"/>
+					</tr>
+					<tr>
+						<th wicket:id="c_details_stars3m_label"/>
+						<td wicket:id="c_details_stars3m_text"/>
+						<th wicket:id="c_details_stars4m_label"/>
+						<td wicket:id="c_details_stars4m_text"/>
+					</tr>
+					<tr>
+						<td colspan="4">
+							<h1>Names</h1>
+						</td>
+					</tr>
+					<tr>
+						<th wicket:id="c_names_en_label"/>
+						<td wicket:id="c_names_en_text"/>
+						<th wicket:id="c_names_de_label"/>
+						<td wicket:id="c_names_de_text"/>
+					</tr>
+					<tr>
+						<th wicket:id="c_names_es_label"/>
+						<td wicket:id="c_names_es_text"/>
+						<th wicket:id="c_names_fr_label"/>
+						<td wicket:id="c_names_fr_text"/>
+					</tr>
+					<tr>
+						<th wicket:id="c_names_it_label"/>
+						<td wicket:id="c_names_it_text"/>
+						<th wicket:id="c_names_su_label"/>
+						<td wicket:id="c_names_su_text"/>
+					</tr>
+				</table>
+				<div class="preview_panel">
+					<img width="400" wicket:id="c_starcard"/>
+				</div>
+			</div>
+		</wicket:extend>
+	</body>
+</html>
