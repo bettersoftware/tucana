@@ -21,6 +21,12 @@ import org.springframework.util.StringUtils;
 import org.tucana.domain.Constellation;
 import org.tucana.service.ConstellationService;
 
+/**
+ * 
+ * @author Anne Miller
+ * @author Peter Smith
+ *
+ */
 public class HomePage extends BasePage {
 	private static final long serialVersionUID = 1L;
 

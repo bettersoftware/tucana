@@ -17,7 +17,7 @@ import org.tucana.service.ConstellationService;
 /**
  * This page shows the details of a constellation.
  * 
- * @author Thorsten Kamann
+ * @author Peter Smith
  */
 public class ConstellationDetails extends BasePage {
 	private static final long serialVersionUID = 1L;
