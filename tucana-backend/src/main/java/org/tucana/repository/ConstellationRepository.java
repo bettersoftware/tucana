@@ -58,6 +58,35 @@ public class ConstellationRepository {
 		return (Constellation) query.getSingleResult();
 	}	
 	
+	
+	@SuppressWarnings("unchecked")
+	public List<Constellation> findAllConstellationsByFullTextSearch(String search){
+		
+		String[] fields = new String[]{"code", "name", "genitiveName", "author", "names.name"};
+		MultiFieldQueryParser parser = new MultiFieldQueryParser(Version.LUCENE_31, fields, new StandardAnalyzer(Version.LUCENE_31));
+		parser.setDefaultOperator(QueryParser.OR_OPERATOR);
+		parser.setAllowLeadingWildcard(true);
+		
+		FullTextQuery ftQuery;
+		try {
+			//search = fixSearchString(search);
+			ftQuery = Search.getFullTextEntityManager(em).createFullTextQuery(parser.parse(search), Constellation.class);
+			ftQuery.setSort(new Sort(new SortField("code", SortField.STRING)));
+			
+			List<Constellation> result = ftQuery.getResultList();
+			Map< String, Constellation> groupedResult = new TreeMap<String, Constellation>();
+			for (Constellation constellation : result) {
+				groupedResult.put(constellation.getCode(), constellation);
+			}		
+			return new ArrayList<Constellation>(groupedResult.values());
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return new ArrayList<Constellation>();
+		}
+		
+	}
+
+	
 	public void reIndexDatabase(){
 		FullTextEntityManager ftem = Search.getFullTextEntityManager(em);
 		List<Constellation> constellations = findAllConstellations();
