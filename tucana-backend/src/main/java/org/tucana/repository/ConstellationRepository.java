@@ -57,5 +57,13 @@ public class ConstellationRepository {
 
 		return (Constellation) query.getSingleResult();
 	}	
+	
+	public void reIndexDatabase(){
+		FullTextEntityManager ftem = Search.getFullTextEntityManager(em);
+		List<Constellation> constellations = findAllConstellations();
+		for (Constellation constellation : constellations) {
+			ftem.index(constellation);
+		}
+	}
 
 }

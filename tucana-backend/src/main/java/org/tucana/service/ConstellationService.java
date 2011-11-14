@@ -49,4 +49,8 @@ public class ConstellationService {
 	public Constellation findConstellationByCode(String code) {
 		return constellationRepository.findConstellationByCode(code);
 	}
+	
+	public void reIndexDatabase() {
+		constellationRepository.reIndexDatabase();
+	}
 }
