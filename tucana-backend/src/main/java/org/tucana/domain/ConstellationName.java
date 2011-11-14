@@ -1,24 +1,25 @@
+/**
+ * 
+ */
 package org.tucana.domain;
-
-import java.io.Serializable;
- 
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Index;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.Store;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.io.Serializable;
+
 /**
- * Domain class holding the international names of a {@link Constellation}.
+ * @author kamann
  * 
- * @author Anne Miller
  */
 @Entity
+@Indexed
 public class ConstellationName implements Serializable {
 	private static final long serialVersionUID = -8582080478309151969L;
 
@@ -26,6 +27,7 @@ public class ConstellationName implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@Field(index = Index.TOKENIZED, store = Store.YES)
 	private String name;
 	private String langCode;
 	private String code;

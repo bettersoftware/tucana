@@ -15,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
+import javax.print.DocFlavor.BYTE_ARRAY;
 
 import org.hibernate.search.annotations.DocumentId;
 import org.hibernate.search.annotations.Field;
@@ -32,18 +33,23 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
  *
  */
 @Entity
-@XStreamAlias("constallation")
+@Indexed
 public class Constellation implements Serializable{
 	private static final long serialVersionUID = 5723129346307261594L;
 
 	@Id
+	@DocumentId
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@Field(index = Index.TOKENIZED, store = Store.YES)
 	private String name;
+	@Field(index = Index.TOKENIZED, store = Store.YES)
 	private String code;
+	@Field(index = Index.TOKENIZED, store = Store.YES)
 	private String genitiveName;
 	private String hemisphere;
+	@Field(index = Index.TOKENIZED, store = Store.YES)
 	private String author;
 	private int authorYear;
 	private double area;
@@ -52,11 +58,10 @@ public class Constellation implements Serializable{
 	private int numberOfStarsGreater3M;
 	private int numberOfStarsGreater4M;
 	@Lob
-	@XStreamOmitField
 	private byte[] starCardData;
-
+	
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-	@XStreamImplicit(itemFieldName="names")
+	@IndexedEmbedded
 	private List<ConstellationName> names = new ArrayList<ConstellationName>();
 
 	/**
