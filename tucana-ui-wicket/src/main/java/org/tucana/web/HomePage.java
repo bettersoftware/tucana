@@ -21,12 +21,6 @@ import org.springframework.util.StringUtils;
 import org.tucana.domain.Constellation;
 import org.tucana.service.ConstellationService;
 
-/**
- * 
- * @author Anne Miller
- * @author Peter Smith
- *
- */
 public class HomePage extends BasePage {
 	private static final long serialVersionUID = 1L;
 
@@ -101,7 +95,12 @@ public class HomePage extends BasePage {
 	}
 
 	private List<Constellation> getConstellations() {
-		constellations = service.findAllConstellations();
+		System.out.println("search: " + search);
+		if (StringUtils.hasText(search)) {
+			constellations = service.findAllConstellationByCodeOrName(search);
+		} else {
+			constellations = service.findAllConstellations();
+		}
 		return constellations;
 	}
 }

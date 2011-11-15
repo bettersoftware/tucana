@@ -29,6 +29,7 @@
 		<property name="jpaPropertyMap">
 			<map>
 				<entry key="hibernate.hbm2ddl.auto" value="${db.hbmddl_auto}" />
+				<entry key="hibernate.search.default.indexBase" value="${tucana.home}/db-index"/>
 			</map>
 		</property>
 	</bean>
