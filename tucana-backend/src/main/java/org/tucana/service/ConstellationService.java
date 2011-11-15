@@ -29,27 +29,34 @@ public class ConstellationService {
 				.persistConstellation(constellation2Persist);
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.agilebackoffice.wafe.domain.IConstellation#findAllConstellations()
+	
+	/**
+	 * @return
 	 */
 	public List<Constellation> findAllConstellations() {
 		return constellationRepository.findAllConstellations();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see
-	 * org.agilebackoffice.wafe.domain.IConstellation#findConstellationByCode
-	 * (java.lang.String)
+	
+	/**
+	 * @param code
+	 * @return
 	 */
 	public Constellation findConstellationByCode(String code) {
 		return constellationRepository.findConstellationByCode(code);
 	}
 	
+	/**
+	 * @param search
+	 * @return
+	 */
+	public List<Constellation> findAllConstellationByCodeOrName(String search) {
+		return constellationRepository.findAllConstellationsByFullTextSearch(search);
+	}
+	
+	/**
+	 * 
+	 */
 	public void reIndexDatabase() {
 		constellationRepository.reIndexDatabase();
 	}
